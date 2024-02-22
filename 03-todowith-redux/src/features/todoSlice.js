@@ -16,11 +16,13 @@ export const todoSlice = createSlice({
       state.todos.push(todo);
       localStorage.setItem("todos", JSON.stringify(state.todos));
     },
+
     // Remove todo
     removeTodo: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
       localStorage.setItem("todos", JSON.stringify(state.todos));
     },
+
     // Update todo
     editTask: (state, action) => {
       const { id, text } = action.payload;
